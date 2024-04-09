@@ -1,0 +1,12 @@
+version: '3.2'
+
+services:
+    app:
+        build: '.'
+        container_name: d2raidbot
+        restart: unless-stopped
+        environment:
+            - SECRET_TOKEN=${SECRET_TOKEN}
+            - LOG_FOLDER=${LOG_FOLDER}
+        volumes:
+            - "./logs:/logs"
