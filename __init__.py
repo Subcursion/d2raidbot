@@ -3,6 +3,7 @@
 import logging
 import os
 import re
+import sys
 from typing import Literal, Optional
 
 import discord
@@ -15,6 +16,8 @@ handler = logging.FileHandler(
 )
 handler.setLevel(logging.DEBUG)
 logger = logging.getLogger()
+console_handler = logging.StreamHandler(sys.stdout)
+logger.addHandler(console_handler)
 
 intents = discord.Intents.default()
 intents.typing = False
